@@ -73,9 +73,9 @@ export class AppComponent implements OnInit {
       f1: 8478483,
       f2: 8476456,
       f3: 8476468,
-      d1: 8480192,
+      d1: 8482964,
       d2: 8480803,
-      g: 8478492,
+      g: 8476341,
       teamid: 52,
       coach: 'Bowness',
     },
@@ -84,7 +84,6 @@ export class AppComponent implements OnInit {
   teamStats: any[] = [];
 
   expandTeam(id:any = ''){
-    console.log("expande", id);
     document.getElementById(id)!.classList.toggle("on");
   }
 
@@ -94,10 +93,8 @@ export class AppComponent implements OnInit {
       .pipe(
         finalize(() => {
           this.teamStats.sort((a:any,b:any) => {
-            console.log(a.total, b.total);
             return (parseInt(b.total) - parseInt(a.total))
           })
-          console.log(this.teamStats, " ", this.teamStats[1].total);
         })
       ).subscribe((response) => {
         this.name = JSON.stringify(response);
@@ -109,6 +106,7 @@ export class AppComponent implements OnInit {
             points:
               this.name.f1Stats.stats[0].splits[0].stat.assists +
               this.name.f1Stats.stats[0].splits[0].stat.goals,
+            team: this.name.f1Name.people[0].currentTeam.name
           },
           {
             name: this.name.f2Name.people[0].fullName,
@@ -116,6 +114,7 @@ export class AppComponent implements OnInit {
             points:
               this.name.f2Stats.stats[0].splits[0].stat.assists +
               this.name.f2Stats.stats[0].splits[0].stat.goals,
+              team: this.name.f2Name.people[0].currentTeam.name
           },
           {
             name: this.name.f3Name.people[0].fullName,
@@ -123,6 +122,7 @@ export class AppComponent implements OnInit {
             points:
               this.name.f3Stats.stats[0].splits[0].stat.assists +
               this.name.f3Stats.stats[0].splits[0].stat.goals,
+              team: this.name.f3Name.people[0].currentTeam.name
           },
           {
             name: this.name.d1Name.people[0].fullName,
@@ -130,6 +130,7 @@ export class AppComponent implements OnInit {
             points:
               this.name.d1Stats.stats[0].splits[0].stat.assists +
               this.name.d1Stats.stats[0].splits[0].stat.goals,
+              team: this.name.d1Name.people[0].currentTeam.name
           },
           {
             name: this.name.d2Name.people[0].fullName,
@@ -137,16 +138,19 @@ export class AppComponent implements OnInit {
             points:
               this.name.d2Stats.stats[0].splits[0].stat.assists +
               this.name.d2Stats.stats[0].splits[0].stat.goals,
+              team: this.name.d2Name.people[0].currentTeam.name
           },
           {
             name: this.name.gName.people[0].fullName,
             position: 'GOL',
-            points: this.name.gStats.stats[0].splits[0].stat.wins,
+            points: this.name.gStats.stats[0].splits[0].stat.wins * 2,
+            team: this.name.gName.people[0].currentTeam.name
           },
           {
             name: owner.coach,
             position: 'COA',
             points: this.name.coach.teams[0].teamStats[0].splits[0].stat.wins,
+            team: this.name.coach.teams[0].name
           }
         ]
         this.team = {
@@ -163,7 +167,7 @@ export class AppComponent implements OnInit {
             this.name.d1Stats.stats[0].splits[0].stat.goals +
             this.name.d2Stats.stats[0].splits[0].stat.assists +
             this.name.d2Stats.stats[0].splits[0].stat.goals +
-            this.name.gStats.stats[0].splits[0].stat.wins +
+            (this.name.gStats.stats[0].splits[0].stat.wins * 2) +
             this.name.coach.teams[0].teamStats[0].splits[0].stat.wins)
         };
         this.teamStats.push(this.team);

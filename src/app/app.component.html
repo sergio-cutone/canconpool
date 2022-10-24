@@ -1,19 +1,10 @@
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * The content below * * * * * * * * * * * -->
-<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
-<!-- * * * * * * * * * * and can be replaced. * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * Delete the template below * * * * * * * * * * -->
-<!-- * * * * * * * to get started with your project! * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-
 <div class="content" role="main">
   <h1>CanCon Pool</h1>
   <table *ngFor="let teamStat of teamStats">
     <thead>
       <tr>
         <th
-          colspan="2"
+          colspan="3"
           class="team-name"
           (click)="expandTeam(teamStat.teamName.toLowerCase())"
         >
@@ -26,11 +17,13 @@
     </thead>
     <tbody id="{{ teamStat.teamName.toLowerCase() }}">
       <tr>
+        <td style="background: #000; color: #fff">TEAM</td>
         <td style="background: #000; color: #fff">POS</td>
-        <td style="background: #000; color: #fff">PLAYER</td>
+        <td style="background: #000; color: #fff; width: 40%">PLAYER</td>
         <td style="background: #000; color: #fff">PTS</td>
       </tr>
       <tr *ngFor="let person of teamStat.people">
+        <td>{{ person.team.slice(0, 3).toUpperCase() }}</td>
         <td>{{ person.position }}</td>
         <td>{{ person.name }}</td>
         <td>{{ person.points }}</td>
@@ -38,13 +31,3 @@
     </tbody>
   </table>
 </div>
-
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * The content above * * * * * * * * * * * -->
-<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
-<!-- * * * * * * * * * * and can be replaced. * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * End of Placeholder * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-
-<router-outlet></router-outlet>
