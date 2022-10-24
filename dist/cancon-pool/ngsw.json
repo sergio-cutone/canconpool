@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1666573733306,
+  "timestamp": 1666614039038,
   "index": "https://sergio-cutone.github.io/canconpool/index.html",
   "assetGroups": [
     {
@@ -13,7 +13,7 @@
       "urls": [
         "https://sergio-cutone.github.io/canconpool/favicon.ico",
         "https://sergio-cutone.github.io/canconpool/index.html",
-        "https://sergio-cutone.github.io/canconpool/main.98cf17e579a2a79a.js",
+        "https://sergio-cutone.github.io/canconpool/main.8947c54a1544271f.js",
         "https://sergio-cutone.github.io/canconpool/manifest.webmanifest",
         "https://sergio-cutone.github.io/canconpool/polyfills.56a29a9ab42e1c2b.js",
         "https://sergio-cutone.github.io/canconpool/runtime.e0b448e2ca97eecc.js",
@@ -52,8 +52,8 @@
     "https://sergio-cutone.github.io/canconpool/assets/icons/icon-72x72.png": "c457e56089a36952cd67156f9996bc4ce54a5ed9",
     "https://sergio-cutone.github.io/canconpool/assets/icons/icon-96x96.png": "3914125a4b445bf111c5627875fc190f560daa41",
     "https://sergio-cutone.github.io/canconpool/favicon.ico": "22f6a4a3bcaafafb0254e0f2fa4ceb89e505e8b2",
-    "https://sergio-cutone.github.io/canconpool/index.html": "3604fea6ee1dc3889a1ac94cf2980f0259988f2a",
-    "https://sergio-cutone.github.io/canconpool/main.98cf17e579a2a79a.js": "5b0789c591ab699a1106ef1e08c780dda40a054c",
+    "https://sergio-cutone.github.io/canconpool/index.html": "14082ef3d2576c9ab74c534b361830b5ca7e715f",
+    "https://sergio-cutone.github.io/canconpool/main.8947c54a1544271f.js": "f66418f08bebb71c7ed20ddcc53d0b6617868902",
     "https://sergio-cutone.github.io/canconpool/manifest.webmanifest": "5c542a6b93aca460669fb8c6f9639271d17f28f5",
     "https://sergio-cutone.github.io/canconpool/polyfills.56a29a9ab42e1c2b.js": "995fbe148415c59eec4025fdb7784562374256b9",
     "https://sergio-cutone.github.io/canconpool/runtime.e0b448e2ca97eecc.js": "e3baba981ae9b6f660ebf7703095466bd25906c6",
